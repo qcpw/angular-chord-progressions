@@ -1,0 +1,41 @@
+
+<div class="container">
+
+      <div class="jumbotron progression-generator">
+        <h1>Chord Progression Generator</h1>
+        <p class="lead">
+          <span ng-repeat="chord in home.progression track by $index">{{chord}} </span>
+        </p>
+        <p>
+            <button ng-click="home.generateProgression('I', home.getRandomProgressionLength(3,7))" class="btn btn-lg btn-primary">Generate Another Progression</a>
+        </p>
+      </div>
+      <form class="progression-form">
+        <fieldset class="form-group">
+    <label for="min-progression-length">Minimum Progression Length</label>
+    <select ng-model="home.minProgressionLength" class="form-control" id="min-progression-length">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </fieldset>
+  <fieldset class="form-group">
+<label for="max-progression-length">Maximum Progression Length</label>
+<select ng-model="home.maxProgressionLength" class="form-control" id="max-progression-length">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+</fieldset>
+<div class="checkbox">
+  <label>
+    <input ng-model="home.completeCadence" type="checkbox">Start on I, End on V
+  </label>
+</div>
+      </form>
+
+</div>

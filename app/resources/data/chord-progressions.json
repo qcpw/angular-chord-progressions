@@ -1,0 +1,19 @@
+{
+"I" : ["I", "ii", "iii", "IV", "V", "vi", "vii0"],
+"i" : ["i", "VII", "III", "VI", "ii0", "iv", "V", "vii0"],
+"iii" : ["vi"],
+"VII" : ["III"],
+
+"vi" : [ "ii", "IV" ],
+"III" : [ "VI" ],
+"VI" : [ "ii0, iv" ],
+
+"ii" : ["V"],
+"IV" : ["vii0"],
+"ii0" : ["V"],
+"iv" : ["vii0", "VII"],
+
+"V" : ["I"],
+"vii0" : ["I", "iii"]
+
+}
