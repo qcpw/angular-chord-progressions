@@ -5,9 +5,12 @@
   .module('progressionGenerator.home')
   .factory('progressionService',progressionService);
 
-  progressionService.$inject = [];
+  progressionService.$inject = ['$http'];
+
+
 
 //TODO: load progression data from external source
+
 var chordProgressions = {
 "I" : ["I", "ii", "iii", "IV", "V", "vi", "vii0"],
 "i" : ["i", "VII", "III", "VI", "ii0", "iv", "V", "vii0"],
@@ -30,7 +33,7 @@ var chordProgressions = {
 
 };
 
-  function progressionService() {
+  function progressionService($http) {
     var service = {
       generateProgression : generateProgression,
       chordProgressions : chordProgressions
@@ -40,11 +43,9 @@ var chordProgressions = {
     ///////////////////
 
 
-
 /**
  * chooseRandom - return a random entry in an array
  **/
-
  function chooseRandom(arr) {
    var index = Math.floor(Math.random()*arr.length);
    return arr[index];
@@ -54,7 +55,6 @@ var chordProgressions = {
  * chooseNextChord - return a (relatively) reasonable
  * next chord given a starting chord
  **/
-
   function chooseNextChord(currentChord) {
     var choices = chordProgressions[currentChord];
     return chooseRandom(choices);
